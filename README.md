@@ -1,5 +1,6 @@
 Task Manager API - NestJS & PrismaPrueba técnica desarrollada bajo los estándares de Arquitectura Modular de NestJS 11 y Prisma ORM 5.22.0. El sistema implementa un CRUD robusto para la gestión de tareas con persistencia en PostgreSQL y despliegue mediante Docker.
-Requisitos PreviosNode.js v20 o superior.Docker & Docker Compose.Postman o herramienta similar para pruebas de API.🛠️ Configuración y Despliegue LocalSiga estos pasos para inicializar el entorno de desarrollo:1. Variables de EntornoCree un archivo .env en la raíz del proyecto con la siguiente configuración:Fragmento de códigoDATABASE_URL="postgresql://postgres:postgres@localhost:5432/tasks_db?schema=public"
+Requisitos PreviosNode.js v20 o superior.Docker & Docker Compose.Postman o herramienta similar para pruebas de API.🛠️ Configuración y Despliegue LocalSiga estos pasos para inicializar el entorno de desarrollo:
+1. Variables de EntornoCree un archivo .env en la raíz del proyecto con la siguiente configuración:Fragmento de códigoDATABASE_URL="postgresql://postgres:postgres@localhost:5432/tasks_db?schema=public"
 2. Infraestructura (Docker)Levante el contenedor de la base de datos PostgreSQL:Bashdocker-compose up -d
 3. Instalación de DependenciasInstale los paquetes necesarios asegurando la compatibilidad de peer dependencies:Bashnpm install --legacy-peer-deps
 4. Sincronización de Base de DatosGenere el cliente de Prisma y ejecute las migraciones iniciales:Bashnpx prisma generate
