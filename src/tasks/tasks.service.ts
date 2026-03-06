@@ -29,4 +29,24 @@ export class TasksService {
     if (!task) throw new NotFoundException(`Task with ID ${id} not found`);
     return task;
   }
+
+  async update(id: number, updateTaskDto: UpdateTaskDto) {
+    // Primero verificamos si la tarea existe usando el método findOne que ya tienes
+    await this.findOne(id);
+
+    return this.prisma.task.update({
+      where: { id },
+      data: updateTaskDto,
+    });
+  }
+
+  async remove(id: number) {
+    // Verificamos existencia antes de intentar borrar para lanzar el 404 si no existe
+    await this.findOne(id);
+
+    return this.prisma.task.delete({
+      where: { id },
+    });
+  }
 }
+
